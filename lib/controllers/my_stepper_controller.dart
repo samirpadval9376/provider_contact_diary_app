@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 
 class StepperController extends ChangeNotifier {
   int currentStep = 0;
@@ -11,6 +10,13 @@ class StepperController extends ChangeNotifier {
   int? contact;
 
   File? image;
+
+  bool isHidden = false;
+
+  void hide() {
+    isHidden = !isHidden;
+    notifyListeners();
+  }
 
   void stepIncrease() {
     if (currentStep < 4) {
