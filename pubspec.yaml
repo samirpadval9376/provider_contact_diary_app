@@ -38,6 +38,11 @@ dependencies:
   provider: ^6.0.5
   image_picker: ^0.8.5
   shared_preferences:
+  path_provider:
+  url_launcher:
+  share_plus:
+  local_auth:
+  flutter_slidable:
 
 dev_dependencies:
   flutter_test:

@@ -9,7 +9,7 @@ class StepperController extends ChangeNotifier {
   String? email;
   int? contact;
 
-  File? image;
+  File? imagePath;
 
   bool isHidden = false;
 
@@ -19,7 +19,7 @@ class StepperController extends ChangeNotifier {
   }
 
   void stepIncrease() {
-    if (currentStep < 4) {
+    if (currentStep < 5) {
       currentStep++;
     }
     notifyListeners();
@@ -33,7 +33,7 @@ class StepperController extends ChangeNotifier {
   }
 
   void addImage({required File img}) {
-    image = img;
+    imagePath = img;
     notifyListeners();
   }
 }

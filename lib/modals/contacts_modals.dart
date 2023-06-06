@@ -1,12 +1,12 @@
 import 'dart:io';
 
 class Contacts {
-  String? firstName;
-  String? lastName;
-  String? email;
-  int? contact;
+  late String? firstName;
+  late String? lastName;
+  late String? email;
+  late String? contact;
 
-  String? imagePath;
+  late String? imagePath;
 
   Contacts({
     required this.firstName,

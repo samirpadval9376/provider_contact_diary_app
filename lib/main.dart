@@ -5,6 +5,7 @@ import 'package:provider_contact_diary_app/controllers/my_stepper_controller.dar
 import 'package:provider_contact_diary_app/controllers/theme_controller.dart';
 import 'package:provider_contact_diary_app/utils/my_page_route.dart';
 import 'package:provider_contact_diary_app/views/screens/add_contact_page.dart';
+import 'package:provider_contact_diary_app/views/screens/detail_contact_page.dart';
 import 'package:provider_contact_diary_app/views/screens/hidden_contact_page.dart';
 import 'package:provider_contact_diary_app/views/screens/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -27,7 +28,7 @@ void main() async {
           create: (context) => ListController(prefs: prefs),
         ),
       ],
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
         MyPageRoute.home: (context) => HomePage(),
         MyPageRoute.addContact: (context) => AddContactPage(),
         MyPageRoute.hiddenContact: (context) => HiddenContactPage(),
+        MyPageRoute.detailContact: (context) => DetailsContactPage(),
       },
     );
   }
