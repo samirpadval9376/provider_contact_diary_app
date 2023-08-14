@@ -73,7 +73,8 @@ class AddContactPage extends StatelessWidget {
               if (formkey.currentState!.validate()) {
                 formkey.currentState!.save();
                 if (Provider.of<StepperController>(context, listen: false)
-                    .isHidden) {
+                        .isHidden ==
+                    true) {
                   Provider.of<ListController>(context, listen: false)
                       .addHiddenContact(
                     firstName: firstName!,
@@ -85,8 +86,7 @@ class AddContactPage extends StatelessWidget {
                 }
 
                 Navigator.of(context).pop();
-              }
-              if (formkey.currentState!.validate()) {
+              } else if (formkey.currentState!.validate()) {
                 formkey.currentState!.save();
                 if (Provider.of<StepperController>(context, listen: false)
                         .isHidden ==
@@ -101,11 +101,12 @@ class AddContactPage extends StatelessWidget {
                   );
                 }
                 Navigator.of(context).pop();
+              } else {
+                print("==================");
+                print(
+                    "${Provider.of<ListController>(context, listen: false).getAllContacts.length}");
+                print("===================");
               }
-              print("==================");
-              print(
-                  "${Provider.of<ListController>(context, listen: false).getAllContacts.length}");
-              print("===================");
             },
             icon: const Icon(
               Icons.done,
@@ -165,7 +166,7 @@ class AddContactPage extends StatelessWidget {
                                       );
                                     }
                                   },
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.camera_alt,
                                   ),
                                   label: const Text("Camera"),
@@ -185,7 +186,7 @@ class AddContactPage extends StatelessWidget {
                                       );
                                     }
                                   },
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.image,
                                   ),
                                   label: const Text("Gallery"),
@@ -195,7 +196,7 @@ class AddContactPage extends StatelessWidget {
                           );
                         },
                         mini: true,
-                        child: Icon(
+                        child: const Icon(
                           Icons.add,
                         ),
                       ),
@@ -206,7 +207,7 @@ class AddContactPage extends StatelessWidget {
                   title: const Text("First Name"),
                   content: TextFormField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      border: const OutlineInputBorder(),
                       hintText: "Enter the First Name",
                       hintStyle: TextStyle(
                         color: Colors.grey.shade400,
@@ -228,7 +229,7 @@ class AddContactPage extends StatelessWidget {
                   title: const Text("Last Name"),
                   content: TextFormField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      border: const OutlineInputBorder(),
                       hintText: "Enter the First Name",
                       hintStyle: TextStyle(
                         color: Colors.grey.shade400,
@@ -293,7 +294,7 @@ class AddContactPage extends StatelessWidget {
                   ),
                 ),
                 Step(
-                  title: const Text("Email"),
+                  title: const Text("Hide"),
                   content: CheckboxListTile(
                     title: const Text("Hide"),
                     value: provider.isHidden,

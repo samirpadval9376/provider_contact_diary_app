@@ -15,6 +15,9 @@ class StepperController extends ChangeNotifier {
 
   void hide() {
     isHidden = !isHidden;
+    print("===================================");
+    print(isHidden);
+    print("===================================");
     notifyListeners();
   }
 

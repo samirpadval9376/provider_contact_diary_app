@@ -53,12 +53,12 @@ class DetailsContactPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    CircleAvatar(
-                      radius: 70,
-                      foregroundImage: FileImage(
-                        File(provider.allHiddenContacts[i].imagePath!),
-                      ),
-                    ),
+                    // CircleAvatar(
+                    //   radius: 70,
+                    //   foregroundImage: FileImage(
+                    //     File(provider.allHiddenContacts[i].imagePath!),
+                    //   ),
+                    // ),
                     SizedBox(
                       width: s.width * 0.03,
                     ),
@@ -69,7 +69,7 @@ class DetailsContactPage extends StatelessWidget {
                           // Globals.allContacts.removeAt(i);
                           Navigator.of(context).pop();
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.delete,
                           size: 35,
                           color: Colors.black,
@@ -83,7 +83,7 @@ class DetailsContactPage extends StatelessWidget {
                           // Navigator.of(context)
                           //     .pushNamed(MyPageRoute.editContact, arguments: i);
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.edit,
                           size: 25,
                           color: Colors.black,
@@ -97,7 +97,7 @@ class DetailsContactPage extends StatelessWidget {
                 height: s.height * 0.03,
               ),
               Text(
-                "${provider.allHiddenContacts[i].firstName} ${provider.allHiddenContacts[i].lastName}",
+                "${provider.getAllContacts[i].firstName} ${provider.getAllContacts[i].lastName}",
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 26,
@@ -109,7 +109,7 @@ class DetailsContactPage extends StatelessWidget {
               Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  "+91 ${provider.allHiddenContacts[i].contact}",
+                  "+91 ${provider.getAllContacts[i].contact}",
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
@@ -130,7 +130,7 @@ class DetailsContactPage extends StatelessWidget {
                     onPressed: () async {
                       Uri uri = Uri(
                         scheme: 'tel',
-                        path: provider.allHiddenContacts[i].contact,
+                        path: provider.getAllContacts[i].contact,
                       );
                       await launchUrl(uri);
                     },
@@ -147,7 +147,7 @@ class DetailsContactPage extends StatelessWidget {
                     onPressed: () async {
                       Uri uri = Uri(
                         scheme: 'sms',
-                        path: provider.allHiddenContacts[i].contact,
+                        path: provider.getAllContacts[i].contact,
                       );
                       await launchUrl(uri);
                     },
@@ -164,7 +164,7 @@ class DetailsContactPage extends StatelessWidget {
                     onPressed: () async {
                       Uri uri = Uri(
                         scheme: 'mailto',
-                        path: provider.allHiddenContacts[i].email,
+                        path: provider.getAllContacts[i].email,
                       );
                       await launchUrl(uri);
                     },
@@ -180,7 +180,7 @@ class DetailsContactPage extends StatelessWidget {
                   FloatingActionButton(
                     onPressed: () {
                       Share.share(
-                          "Name: ${provider.allHiddenContacts[i].firstName}\nContact: ${provider.allHiddenContacts[i].contact}");
+                          "Name: ${provider.getAllContacts[i].firstName}\nContact: ${provider.getAllContacts[i].contact}");
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),

@@ -96,11 +96,11 @@ class HomePage extends StatelessWidget {
                     arguments: index,
                   );
                 },
-                leading: CircleAvatar(
-                  foregroundImage: FileImage(
-                    File(provider.getAllContacts[index].imagePath!),
-                  ),
-                ),
+                // leading: CircleAvatar(
+                //   foregroundImage: FileImage(
+                //     File(provider.getAllContacts[index].imagePath!),
+                //   ),
+                // ),
                 title: Text(
                     "${provider.getAllContacts[index].firstName} ${provider.getAllContacts[index].lastName}"),
                 subtitle: Text("${provider.getAllContacts[index].contact}"),

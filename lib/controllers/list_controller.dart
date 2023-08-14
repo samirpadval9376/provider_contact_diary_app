@@ -43,7 +43,7 @@ class ListController extends ChangeNotifier {
     getAllImages = prefs.getStringList(allImage) ?? [];
 
     allContacts = List.generate(
-      allNumbers.length,
+      getAllNumbers.length,
       (index) => Contacts(
         firstName: getAllFirstNames[index],
         lastName: getAllLastNames[index],
